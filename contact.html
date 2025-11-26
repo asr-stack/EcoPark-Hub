@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>EcoCharge Hub – Contact & Feedback</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <nav class="nav">
+        <div class="logo">
+          <div class="logo-icon"></div>
+          <div>
+            <div class="logo-text-main">EcoCharge Hub</div>
+            <div class="logo-text-sub">Smart EV Parking</div>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">About</a>
+          <a href="booking.html">Booking</a>
+          <a href="energy.html">Energy</a>
+          <a href="contact.html" class="active">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="section fade-in-up">
+        <h2 class="section-title">Contact our team</h2>
+        <p class="section-subtitle">
+          Reach out to the right person instantly. You can customize these names, numbers and
+          emails with your actual team details later.
+        </p>
+
+        <div class="contact-grid">
+          <!-- Contacts -->
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="contact-role">Operations Lead</div>
+              <div class="contact-name">Priya Sharma</div>
+              <div class="contact-meta">Phone: +91-98765-00001</div>
+              <div class="contact-meta">Email: operations@ecochargehub.com</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-role">Facility In‑Charge – Block A/B</div>
+              <div class="contact-name">Rahul Verma</div>
+              <div class="contact-meta">Phone: +91-98765-00002</div>
+              <div class="contact-meta">Email: block-ab@ecochargehub.com</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-role">Facility In‑Charge – Block C</div>
+              <div class="contact-name">Ananya Iyer</div>
+              <div class="contact-meta">Phone: +91-98765-00003</div>
+              <div class="contact-meta">Email: block-c@ecochargehub.com</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-role">Security Head</div>
+              <div class="contact-name">Security Control Room</div>
+              <div class="contact-meta">Phone: +91-98765-00005</div>
+              <div class="contact-meta">Email: security@ecochargehub.com</div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-role">Support & Feedback</div>
+              <div class="contact-name">EcoCharge Support Desk</div>
+              <div class="contact-meta">Phone: +91-98765-00004</div>
+              <div class="contact-meta">Email: support@ecochargehub.com</div>
+            </div>
+          </div>
+
+          <!-- Feedback form -->
+          <div class="feedback-card">
+            <h3 class="card-title">Real‑time feedback</h3>
+            <p class="card-body" style="margin-bottom: 0.7rem;">
+              Help us improve your experience. Share issues with charging, navigation, safety,
+              or any ideas you’d love to see in EcoCharge Hub.
+            </p>
+
+            <form id="feedbackForm">
+              <div class="form-group">
+                <label class="form-label" for="feedbackCategory">Feedback category</label>
+                <select id="feedbackCategory" class="input">
+                  <option value="experience">Overall experience</option>
+                  <option value="parking">Parking &amp; guidance</option>
+                  <option value="charging">Charging performance</option>
+                  <option value="billing">Billing &amp; pricing</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="feedbackMessage">Your message</label>
+                <textarea
+                  id="feedbackMessage"
+                  class="textarea"
+                  placeholder="Tell us what worked well or what we should improve..."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="feedbackEmail">Email (optional, for follow‑up)</label>
+                <input
+                  type="email"
+                  id="feedbackEmail"
+                  class="input"
+                  placeholder="you@example.com"
+                />
+              </div>
+
+              <button type="submit" class="btn btn-primary">Send feedback</button>
+              <div class="feedback-status" id="feedbackStatus"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      © <span id="year"></span> EcoCharge Hub. Contact & feedback.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const feedbackForm = document.getElementById("feedbackForm");
+    const feedbackStatus = document.getElementById("feedbackStatus");
+
+    feedbackForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const category = document.getElementById("feedbackCategory").value;
+      const message = document.getElementById("feedbackMessage").value.trim();
+      const email = document.getElementById("feedbackEmail").value.trim();
+
+      if (!message) return;
+
+      // For now, we'll just store it in localStorage as a demo.
+      const existing = JSON.parse(localStorage.getItem("ecocharge_feedback") || "[]");
+      existing.push({
+        category,
+        message,
+        email: email || null,
+        createdAt: new Date().toISOString(),
+      });
+      localStorage.setItem("ecocharge_feedback", JSON.stringify(existing));
+
+      feedbackForm.reset();
+      feedbackStatus.textContent =
+        "Thank you! Your feedback has been captured locally for this demo. In production, this would be sent securely to our servers.";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>EcoCharge Hub – About Us</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Header / Navigation -->
+    <header class="header">
+      <nav class="nav">
+        <div class="logo">
+          <div class="logo-icon"></div>
+          <div>
+            <div class="logo-text-main">EcoCharge Hub</div>
+            <div class="logo-text-sub">Smart EV Parking</div>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="index.html" class="active">About</a>
+          <a href="booking.html">Booking</a>
+          <a href="energy.html">Energy</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <!-- Hero / About block -->
+      <section class="hero fade-in-up">
+        <div>
+          <h1 class="hero-title">
+            Welcome to <span class="hero-highlight">EcoCharge Hub</span>
+          </h1>
+          <p class="hero-tagline">
+            A next‑generation smart parking ecosystem that seamlessly combines electric vehicle
+            charging, intelligent slot management, and clean energy harvesting from every step
+            and wheel that passes through our spaces.
+          </p>
+          <div class="hero-badges">
+            <span class="badge">User‑centric design</span>
+            <span class="badge">Real‑time slot awareness</span>
+            <span class="badge">Piezo‑electric floor tiles</span>
+            <span class="badge">Carbon‑light mobility</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-logo">
+            <div class="hero-logo-icon"></div>
+            <div class="hero-logo-text">EcoCharge Hub</div>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-card">
+              <div class="stat-label">Live Capacity</div>
+              <div class="stat-value">70%</div>
+              <div class="stat-sub">Dynamic slot allocation</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Energy Recovered</div>
+              <div class="stat-value">+ 1.4 MWh</div>
+              <div class="stat-sub">From movement alone</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Average Check‑In</div>
+              <div class="stat-value">&lt; 30s</div>
+              <div class="stat-sub">From scan to slot</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">CO₂ Avoided</div>
+              <div class="stat-value">+ 18%</div>
+              <div class="stat-sub">vs. regular parking</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission / Vision / Values -->
+      <section class="section fade-in-up delay-2">
+        <h2 class="section-title">Who we are</h2>
+        <p class="section-subtitle">
+          Update this section later with your real company story – for now, here’s a clean
+          structure you can easily customize.
+        </p>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3 class="card-title">Our Mission</h3>
+            <p class="card-body">
+              To transform everyday parking spaces into intelligent, energy‑positive hubs that
+              make EV ownership simpler, cleaner, and more accessible for everyone.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Our Technology</h3>
+            <p class="card-body">
+              EcoCharge Hub integrates smart parking guidance, secure OTP‑based reservations,
+              and piezo‑electric tiles that convert motion into usable electricity for on‑site
+              charging and grid support.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Our Promise</h3>
+            <p class="card-body">
+              A smooth, intuitive user experience: real‑time visibility of free slots, frictionless
+              bookings, and transparent insights into how much clean energy your visit helped create.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Mezzo / energy tiles explanation with small 3D visual -->
+      <section class="section fade-in-up delay-3">
+        <h2 class="section-title">Energy‑harvesting mezzo tiles</h2>
+        <p class="section-subtitle">
+          Each parking block at EcoCharge Hub uses layered mezzo‑electric tiles that quietly turn
+          footsteps and vehicle movement into useful clean energy for lighting and charging.
+        </p>
+
+        <div class="tiles-layout">
+          <div class="tiles-copy">
+            <p class="tiles-copy-strong">
+              How they work
+            </p>
+            <p>
+              These tiles compress slightly under weight, using piezo‑electric materials to transform
+              that pressure into small bursts of electrical energy. At scale, across thousands of
+              vehicle passes per day, those bursts become a dependable clean power source.
+            </p>
+            <p>
+              Instead of one large power plant, each tile behaves like a tiny generator. We aggregate
+              their output to feed guidance lights, occupancy sensors, and EV chargers throughout the
+              hub in real time.
+            </p>
+            <p>
+              Energy production is tracked at the block level, so visitors can see how much energy
+              their stay helped generate and how much of their own charging session was powered by
+              on‑site renewables.
+            </p>
+          </div>
+
+          <div class="tiles-visual">
+            <div class="tile-stack">
+              <div class="tile-layer tile-layer-back">
+                <div class="tile-shadow-layer"></div>
+              </div>
+              <div class="tile-layer tile-layer-mid">
+                <div class="tile-shadow-layer"></div>
+              </div>
+              <div class="tile-layer">
+                <div class="tile-grid-line"></div>
+                <div class="tile-path"></div>
+                <div class="tile-pulse"></div>
+                <div class="tile-shadow-layer"></div>
+                <div class="tile-label">Mezzo Tile</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      © <span id="year"></span> EcoCharge Hub. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    // Simple dynamic year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
